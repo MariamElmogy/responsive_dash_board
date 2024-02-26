@@ -3,31 +3,37 @@ import 'package:responsive_dash_board/models/all_expensess_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'all_expensess_item.dart';
 
-class AllExpnesessList extends StatelessWidget {
+class AllExpnesessList extends StatefulWidget {
   const AllExpnesessList({
     super.key,
   });
 
-  static const items = [
-    AllExpensessItemModel(
+  @override
+  State<AllExpnesessList> createState() => _AllExpnesessListState();
+}
+
+class _AllExpnesessListState extends State<AllExpnesessList> {
+  final items = [
+    const AllExpensessItemModel(
       image: Assets.imagesBalance,
       title: 'Balance',
       date: 'April 2022',
       price: '\$20,129',
     ),
-    AllExpensessItemModel(
+    const AllExpensessItemModel(
       image: Assets.imagesIncome,
       title: 'Income',
       date: 'April 2022',
       price: '\$20,129',
     ),
-    AllExpensessItemModel(
+    const AllExpensessItemModel(
       image: Assets.imagesExpenses,
       title: 'Expenses',
       date: 'April 2022',
       price: '\$20,129',
     ),
   ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -37,15 +43,35 @@ class AllExpnesessList extends StatelessWidget {
         var item = e.value;
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensessItem(itemModel: item),
+            child: GestureDetector(
+              onTap: () => updateIndex(index),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensessItem(
+                  itemModel: item,
+                  isSelected: selectedIndex == index,
+                ),
+              ),
             ),
           );
         } else {
-          return Expanded(child: AllExpensessItem(itemModel: item));
+          return Expanded(
+            child: GestureDetector(
+              onTap: () => updateIndex(index),
+              child: AllExpensessItem(
+                itemModel: item,
+                isSelected: selectedIndex == index,
+              ),
+            ),
+          );
         }
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 }
