@@ -29,7 +29,6 @@ class LatestTransactionListView extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: items
             .map((e) =>
                 IntrinsicWidth(child: UserInfoListTile(userInfoModel: e)))
