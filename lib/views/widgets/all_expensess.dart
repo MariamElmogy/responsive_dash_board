@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'all_expensess_header.dart';
-import 'all_expnesess_list.dart';
+import 'all_expnesess_list_view.dart';
 import 'custom_background_container.dart';
 
 class AllExpensess extends StatelessWidget {
@@ -10,11 +10,11 @@ class AllExpensess extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CustomBackgroundContainer(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           AllExpensessHeader(),
           SizedBox(height: 16),
-          AllExpnesessList(),
+          AllExpnesessListView(),
         ],
       ),
     );

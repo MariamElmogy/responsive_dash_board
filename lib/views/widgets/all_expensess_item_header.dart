@@ -13,6 +13,7 @@ class AllExpensessItemHeader extends StatelessWidget {
         Container(
           width: 60,
           height: 60,
+          padding: const EdgeInsets.all(14),
           decoration: ShapeDecoration(
             color: imageBackground ?? const Color(0XFFFAFAFA),
             shape: const OvalBorder(),

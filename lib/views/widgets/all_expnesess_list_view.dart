@@ -3,16 +3,16 @@ import 'package:responsive_dash_board/models/all_expensess_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'all_expensess_item.dart';
 
-class AllExpnesessList extends StatefulWidget {
-  const AllExpnesessList({
+class AllExpnesessListView extends StatefulWidget {
+  const AllExpnesessListView({
     super.key,
   });
 
   @override
-  State<AllExpnesessList> createState() => _AllExpnesessListState();
+  State<AllExpnesessListView> createState() => _AllExpnesessListViewState();
 }
 
-class _AllExpnesessListState extends State<AllExpnesessList> {
+class _AllExpnesessListViewState extends State<AllExpnesessListView> {
   final items = [
     const AllExpensessItemModel(
       image: Assets.imagesBalance,
