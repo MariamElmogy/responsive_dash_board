@@ -14,6 +14,7 @@ class MyCard extends StatelessWidget {
         decoration: ShapeDecoration(
           color: const Color(0XFF4EB7F2),
           image: const DecorationImage(
+            fit: BoxFit.fill,
             image: AssetImage(Assets.imagesCardBackground),
           ),
           shape: RoundedRectangleBorder(
