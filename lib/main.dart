@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/dash_board_view.dart';
+import 'views/dashboard_view.dart';
 
 void main() {
   runApp(const ResponsiveDashBoard());
