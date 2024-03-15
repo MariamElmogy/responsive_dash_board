@@ -17,11 +17,11 @@ class _DashBoardViewState extends State<DashBoardView> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    SizeConfig.init(context);
+    // SizeConfig.init(context);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: const Color(0XFFF7F9FA),
-      appBar: SizeConfig.width < SizeConfig.tablet
+      appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
           ? AppBar(
               leading: IconButton(
                 icon: const Icon(Icons.menu),
@@ -33,8 +33,9 @@ class _DashBoardViewState extends State<DashBoardView> {
               backgroundColor: const Color(0XFFFAFAFA),
             )
           : null,
-      drawer:
-          SizeConfig.width < SizeConfig.tablet ? const CustomDrawer() : null,
+      drawer: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+          ? const CustomDrawer()
+          : null,
       body: AdaptiveLayout(
         mobileLayout: (context) => const DashBoardMobileLayout(),
         tabletLayout: (context) => const DashBoardTabletLayout(),
