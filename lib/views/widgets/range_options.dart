@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 
@@ -23,9 +22,9 @@ class RangeOptions extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Text(
+          Text(
             'Monthly',
-            style: AppStyles.styleMedium16,
+            style: AppStyles.styleMedium16(context),
           ),
           const SizedBox(width: 18),
           Transform.rotate(

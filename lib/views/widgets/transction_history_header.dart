@@ -11,13 +11,13 @@ class TransctionHistoryHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+        Text(
           'Transction History',
-          style: AppStyles.styleSemiBold20,
+          style: AppStyles.styleSemiBold20(context),
         ),
         Text(
           'See all',
-          style: AppStyles.styleMedium16.copyWith(
+          style: AppStyles.styleMedium16(context).copyWith(
             color: const Color(0XFF4EB7F2),
           ),
         ),
